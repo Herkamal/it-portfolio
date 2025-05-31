@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Directory in Azure Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="adlab-header">
+    <h1>Active Directory in Azure</h1>
+  </header>
+  <div class="adlab-container">
+
+    <section class="adlab-step">
+      <h2>Active Directory Installation in Azure</h2>
+      <p>This lab demonstrates how to set up and configure Active Directory on a Windows Server virtual machine hosted in Microsoft Azure. It includes network configuration, static IP setup, DNS changes, and connectivity verification with a client system.</p>
+
+      <h3>Tools & Technologies Used</h3>
+      <ul>
+        <li>Microsoft Azure (Virtual Machine Hosting)</li>
+        <li>Windows Server 2022 (Domain Controller)</li>
+        <li>Windows 10 Pro</li>
+        <li>Remote Desktop Connection</li>
+        <li>Active Directory Domain Services (AD DS)</li>
+        <li>PowerShell & GUI tools</li>
+      </ul>
+
+      <h3>Objective</h3>
+      <ul>
+        <li>Setting static IP addresses</li>
+        <li>Installing AD DS</li>
+        <li>Promoting the server to a domain controller</li>
+        <li>Adjusting firewall settings</li>
+        <li>Testing domain connectivity from a client machine</li>
+      </ul>
+
+      <h3>Step-by-Step Setup</h3>
+
+      <h4>1. Creating the Domain Controller (DC)</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/Creating.png?raw=true">
+      <p>A new Windows Server VM is created in Azure to serve as the Domain Controller. Initial setup includes assigning the proper virtual network and security group.</p>
+
+      <h4>2. Setting a Static IP Address</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/static.png?raw=true">
+      <p>To ensure consistent domain functionality, a static private IP is assigned to the server through the Azure portal.</p>
+
+      <h4>3. Verifying System Information</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/systemServer.png?raw=true">
+      <p>System properties are reviewed to confirm hostname and Windows edition, which are important for domain naming conventions and compatibility.</p>
+
+      <h4>4. Opening Firewall for AD Services</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/run-firewall.png?raw=true">
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/firewall-off.png?raw=true">
+      <p>Windows Defender Firewall settings are adjusted to allow necessary AD services to communicate. In this step, the firewall is turned off temporarily to ensure connectivity during setup.</p>
+
+      <h4>5. Changing DNS Server on the Client</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/changing-dns-server.png?raw=true">
+      <p>The Windows 10 client VM is pointed to the Domain Controller's IP address as its primary DNS server to ensure proper domain resolution.</p>
+
+      <h4>6. Restarting the Client VM</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/client-1-restart.png?raw=true">
+      <p>After setting the DNS server, the client machine is restarted to apply networking changes and prepare for domain join.</p>
+
+      <h4>7. Verifying Network Connection</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/ping.png?raw=true">
+      <p>Using the ping command, the client system checks communication with the Domain Controller to ensure connectivity and proper DNS resolution.</p>
+
+      <h4>8. Checking IP Configuration</h4>
+      <img src="https://github.com/Herkamal/Install-AD/blob/main/ipconfig-all.png?raw=true">
+      <p>The ipconfig /all command confirms DNS settings and IP assignment. This step ensures that everything is correctly configured before joining the domain.</p>
+
+      <h3>Summary</h3>
+      <p>This lab successfully set the foundation for an Active Directory environment in Azure. The configuration ensured that the Domain Controller and client VM could communicate securely, and the client was properly prepared to join the domain.</p>
+    </section>
+
+    <section class="adlab-step">
+      <h2>Deploying Active Directory in Azure</h2>
+      <p>This lab demonstrates how to deploy and configure Active Directory Domain Services (AD DS) on a Windows Server virtual machine (DC-1), create domain users, promote the server as a domain controller, and join a client machine to the new domain.</p>
+
+      <h3>Technologies Used</h3>
+      <ul>
+        <li>Microsoft Azure (Virtual Machines, Networking)</li>
+        <li>Windows Server 2022 (Domain Controller)</li>
+        <li>Windows 10 Pro (Client)</li>
+        <li>Active Directory Domain Services (AD DS)</li>
+        <li>Remote Desktop</li>
+      </ul>
+
+      <h3>Lab Objectives</h3>
+      <ul>
+        <li>Install and promote AD DS on a domain controller</li>
+        <li>Create Organizational Units (OUs) and administrative users</li>
+        <li>Add a Windows 10 client machine to the domain</li>
+        <li>Verify domain membership via Active Directory Users and Computers (ADUC)</li>
+      </ul>
+
+      <h3>Domain Controller Setup</h3>
+
+      <h4>Step 1: Add AD DS Role to DC-1</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/add-role.png?raw=true">
+      <p>Start by adding the Active Directory Domain Services role to the DC-1 virtual machine via Server Manager.</p>
+
+      <h4>Step 2: Create a New Forest (mydomain.com)</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/domain.png?raw=true">
+      <p>Promote the server to a Domain Controller by setting up a new forest. In this lab, the domain used was mydomain.com.</p>
+
+      <h4>Step 3: Install and Configure AD DS</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/install.png?raw=true">
+      <p>The installation process completes and the system restarts. Once rebooted, log into DC-1 using the domain format: mydomain.com\labuser.</p>
+
+      <h3>Creating OUs and Admin Accounts</h3>
+
+      <h4>Step 4: Create _EMPLOYEES and _ADMINS OUs</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/creating-folders.png?raw=true">
+      <p>Using Active Directory Users and Computers (ADUC), create two organizational units (OUs): _EMPLOYEES and _ADMINS.</p>
+
+      <h4>Step 5: Create a New Admin User (Jane Doe)</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/creating-admin.png?raw=true">
+      <p>Inside the _ADMINS OU, create a user named Jane Doe with the username jane_admin and password Cyberlab123!.</p>
+
+      <h4>Step 6: Add Jane to Domain Admins Group</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/domain-admin.png?raw=true">
+      <p>Add jane_admin to the Domain Admins group to grant her full administrative privileges across the domain.</p>
+
+      <h3>Client Machine Domain Join</h3>
+
+      <h4>Step 7: Join Client-1 to the Domain</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/client-domain.png?raw=true">
+      <p>From Client-1, log in as the local admin (labuser) and join the system to mydomain.com. The computer will restart after joining.</p>
+
+      <h4>Step 8: Organize Client in ADUC</h4>
+      <img src="https://github.com/Herkamal/Deploying-Active-Directory/blob/main/Create-client.png?raw=true">
+      <p>Back on DC-1, confirm Client-1 appears in ADUC. Create a new OU called _CLIENTS and move the Client-1 object into it for proper organization.</p>
+
+      <h3>Lab Complete</h3>
+      <p>At the end of this lab, you will have:</p>
+      <ul>
+        <li>Installed and configured AD DS</li>
+        <li>Promoted a Windows Server to a domain controller</li>
+        <li>Created domain users and groups</li>
+        <li>Joined a Windows client to the domain</li>
+        <li>Verified domain structure and organization using ADUC</li>
+      </ul>
+      <p>This setup establishes a foundation for managing users, computers, and policies in a real-world Windows domain environment.</p>
+    </section>

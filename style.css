@@ -82,3 +82,99 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+/* === General Reset === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Header === */
+.osticket-header {
+  background-color: #004aad;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.osticket-header a {
+  color: #ffe600;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.osticket-header a:hover {
+  text-decoration: underline;
+}
+
+/* === Container === */
+.osticket-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === Section Titles === */
+.osticket-container h2 {
+  border-bottom: 2px solid #004aad;
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+  color: #004aad;
+}
+
+.osticket-container h3 {
+  margin-top: 2rem;
+  color: #0055cc;
+}
+
+/* === Step Blocks === */
+.osticket-step {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.osticket-step img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 4px;
+}
+
+/* === Footer === */
+.osticket-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #004aad;
+  color: white;
+  margin-top: 4rem;
+}
+
+/* === Lists === */
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .osticket-container {
+    padding: 0 0.5rem;
+  }
+
+  .osticket-header,
+  .osticket-footer {
+    font-size: 0.9rem;
+  }
+}

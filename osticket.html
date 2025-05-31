@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>osTicket Project | Herkamal Randhawa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="osticket-header">
+    <h1>osTicket Deployment Lab</h1>
+    <p><a href="index.html">&#8592; Back to Portfolio</a></p>
+  </header>
+
+  <div class="osticket-container">
+    <!-- existing content here... -->
+
+    <section class="osticket-config">
+      <h2>osTicket - Post-Install Configurations</h2>
+      <p>This lab demonstrates the necessary changes I made to configure osTicket into a functioning ticketing system that mimics real-world IT support workflows. These configurations help simulate a professional service desk environment where roles, teams, and priorities are clearly defined.</p>
+
+      <h3>Environments and Technologies Used</h3>
+      <ul>
+        <li>Microsoft Azure (Virtual Machine)</li>
+        <li>Remote Desktop Connection</li>
+        <li>osTicket</li>
+      </ul>
+
+      <h3>Operating System Used</h3>
+      <ul>
+        <li>Windows 10 Pro (21H2)</li>
+      </ul>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/roles.png?raw=true" alt="Supreme Admin Role">
+        <p>Created a custom role called <strong>Supreme Admin</strong> in <em>Agents > Roles</em> for full administrative access.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/departments.png?raw=true" alt="Departments">
+        <p>Created the <strong>System Administrators</strong> department in <em>Agents > Departments</em> for organized ticket routing.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/teams.png?raw=true" alt="Teams">
+        <p>Added a team named <strong>Online banking</strong> for interdepartmental issue handling via <em>Agents > Teams</em>.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/Agents.png?raw=true" alt="Agents">
+        <p>Created two agents: <strong>Jane Doe</strong> and <strong>John Doe</strong> to simulate ticket handling under <em>Agents > Add New Agent</em>.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/users.png?raw=true" alt="Users">
+        <p>Added user <strong>Karen</strong> for simulating a real end-user experience.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/SLA.png?raw=true" alt="SLA">
+        <p>Configured SLA levels (SEV-A, SEV-B, SEV-C) via <em>Manage > SLA</em> for response timing based on severity.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/post-install-config/blob/main/help-topic.png?raw=true" alt="Help Topics">
+        <p>Set up Help Topics like Password Reset and Equipment Reset under <em>Admin Panel > Manage > Help Topics</em> to categorize tickets efficiently.</p>
+      </div>
+
+      <p>With all the necessary configurations completed, osTicket is now fully functional as a support ticketing system. I am able to simulate a real-world IT support process, from user submission to agent response, team collaboration, and ticket prioritization based on impact.</p>
+    </section>
+
+    <section class="osticket-lifecycle">
+      <h2>osTicket - Ticket Lifecycle</h2>
+      <p>This lab walks through the lifecycle of support tickets within osTicket. From ticket creation to agent login, assignment, resolution, and closure, each step mimics how an actual IT support desk would handle incoming service requests.</p>
+
+      <h3>Tools & Technologies Used</h3>
+      <ul>
+        <li>Microsoft Azure (Virtual Machine Hosting)</li>
+        <li>Remote Desktop Connection</li>
+        <li>osTicket (Ticketing System)</li>
+        <li>Windows 10 Pro (21H2)</li>
+      </ul>
+
+      <h3>Objective</h3>
+      <p>To demonstrate how tickets are submitted by users, processed by support agents, and resolved using osTicket’s built-in tools such as SLAs, help topics, roles, and teams.</p>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/ticket1.png?raw=true" alt="Ticket 1">
+        <p>A user submits a support ticket. It enters the system's queue for agents to pick up and triage.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/john-login.png?raw=true" alt="John Login">
+        <p>John logs into the Agent Panel to begin working on open tickets.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/John-ticket1.png?raw=true" alt="John Ticket 1">
+        <p>John opens and reviews Ticket #1, preparing to resolve the issue.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/Jane-login.png?raw=true" alt="Jane Login">
+        <p>Jane logs into the Agent Panel to assist with support tickets.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/jane-bank-fix.png?raw=true" alt="Jane Bank Fix">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/jane-bank.png?raw=true" alt="Jane Bank Ticket">
+        <p>Jane works on a business-critical banking ticket and resolves the issue.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/ticket2.png?raw=true" alt="Ticket 2">
+        <p>A second user ticket is submitted under a different help topic.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/john-ticket2-fix.png?raw=true" alt="John Ticket 2 Fix">
+        <p>John resolves Ticket #2 and marks it as closed.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/ticket3.png?raw=true" alt="Ticket 3">
+        <p>A third ticket is submitted, showcasing another use case.</p>
+      </div>
+
+      <div class="osticket-step">
+        <img src="https://github.com/Herkamal/Ticket-Lifecycle/blob/main/john-ticket3-fix.png?raw=true" alt="John Ticket 3 Fix">
+        <p>John resolves the final ticket in the queue, closing the full cycle.</p>
+      </div>
+
+      <h3>Conclusion</h3>
+      <p>Through this lab, I gained a full understanding of how tickets flow through a support system using osTicket. From multiple agent logins to help topic routing, SLAs, and resolution workflows — I was able to simulate real-world IT support desk procedures.</p>
+    </section>
+  </div>
+
+  <footer class="osticket-footer">
+    &copy; 2025 Herkamal Randhawa | osTicket Project
+  </footer>
+</body>
+</html>
